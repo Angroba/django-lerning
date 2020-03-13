@@ -4,7 +4,7 @@ import requests
 
 
 cities = [
-    'Омск',
+    'СУПЕРОмск',
     'Калининград',
     'Челябинск',
     'Владивосток',
@@ -30,7 +30,7 @@ def make_parameters():
 def what_weather(city):
     try:
         rya=requests.get(make_url(city), make_parameters() )
- except requests.ConnectionError:
+    except requests.ConnectionError:
         return '<сетевая ошибка>'
     if rya.status_code == 200:
         return rya.text
